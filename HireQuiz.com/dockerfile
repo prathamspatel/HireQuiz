@@ -1,0 +1,46 @@
+FROM node:18.13.0-alpine as dependencies
+
+
+ENV NODE_ENV=production
+
+
+LABEL maintainer="Jay, Parita, Nirav and Pratham"
+LABEL description="Hirequiz backend service"
+
+ENV PORT=8080
+
+ENV NPM_CONFIG_LOGLEVEL=warn
+
+ENV NPM_CONFIG_COLOR=false
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci --only=production
+
+
+USER node
+
+
+############################################################################################3
+FROM node:18.13.0-alpine as builder
+
+WORKDIR /app
+
+COPY --from=dependencies /app /app
+
+COPY --chown=node:node ./src ./src
+
+COPY ./tests/.htpasswd ./tests/.htpasswd
+
+COPY . .
+
+RUN apk --no-cache add dumb-init~=1.2.5
+
+CMD ["dumb-init", "node", "/app/src/server.js"]
+
+EXPOSE 8080
+
+HEALTHCHECK  --interval=30s --timeout=10s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1
