@@ -1,0 +1,127 @@
+/*
+styles/globals.css
+Created by: Parita
+Last Updated by: Parita on Aug 02
+*/
+
+.navbar {
+  background-color:#0056b3;
+}
+
+.navbar-brand h1 {
+  color: #fff; 
+}
+
+.nav-link[href="/"] {
+  background-color: beige;
+  color:#0056b3;
+  border-radius: 6px; 
+  margin-right: 5%;
+}
+
+.nav-link[href="/login"] {
+  background-color: beige;
+  color:#0056b3;
+  border-radius: 6px; 
+}
+
+.nav-link[href="/logout"] {
+  background-color: beige;
+  color:#0056b3;
+  border-radius: 6px; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+#homePage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#homePage h1 {
+  font-size: 48px;
+}
+
+#homePage h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: #666;
+}
+
+#homePage h4 {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #666;
+}
+
+#homePage a.btn {
+  margin-top: 20px;
+  margin-right: 3%;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: beige;
+  color:#0056b3;
+}
+
+#homePage img {
+  height: 400px;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#jobformSubmit {
+  background-color: beige;
+  color:#0056b3;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#jobformSubmit:hover {
+  background-color: #0056b3;
+}
+
+#jobformJobposting {
+  background-color: beige;
+  color:#0056b3;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10%;
+}
+
+#jobformJobposting:hover {
+  background-color: #0056b3;
+}
+
+.btn.bg-green {
+  background-color: green;
+  color: white;
+}
+
+.btn.bg-red {
+  background-color: red;
+  color: white;
+}
+
+.btn.bg-yellow {
+  background-color: yellow;
+  color: black;
+}
+
+
+
+
